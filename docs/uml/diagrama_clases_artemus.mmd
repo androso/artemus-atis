@@ -1,0 +1,153 @@
+classDiagram
+    direction LR
+
+    class RolUsuario {
+        <<enumeration>>
+        PROPIETARIO
+        ARQUITECTO
+    }
+
+    class OrientacionCardinal {
+        <<enumeration>>
+        NORTE
+        SUR
+        ESTE
+        OESTE
+    }
+
+    class EstadoVersion {
+        <<enumeration>>
+        BORRADOR
+        ACEPTADA
+        OBSOLETA
+    }
+
+    class DecisionRevision {
+        <<enumeration>>
+        APROBADO
+        REQUIERE_AJUSTES
+    }
+
+    class FormatoExportacion {
+        <<enumeration>>
+        PDF
+        DXF
+    }
+
+    class Usuario {
+        +UUID id
+        +String nombreCompleto
+        +String correo
+        -String passwordHash
+        +RolUsuario rol
+        +Date fechaRegistro
+        +registrar()
+        +iniciarSesion() String
+        +cerrarSesion()
+        +validarCredenciales() Boolean
+    }
+
+    class Proyecto {
+        +UUID id
+        +String nombre
+        +String descripcion
+        +Date fechaCreacion
+        +Boolean requisitosCompletos
+        +generarResumenRequisitos() ResumenRequisitos
+        +detectarInconsistencias() List
+        +validarDatosMinimos() Boolean
+    }
+
+    class Terreno {
+        +UUID id
+        +Float frenteMts
+        +Float fondoMts
+        +Float areaTotalM2
+        +OrientacionCardinal orientacionFrente
+        +Float retiroMts
+        +validarDimensiones() Boolean
+        +verificarConsistenciaArea() Boolean
+        +calcularAreaConstruible() Float
+    }
+
+    class EspacioRequerido {
+        +UUID id
+        +String tipo
+        +String zona
+        +Integer cantidad
+        +Float areaDeseadaM2
+        +Boolean esPersonalizado
+        +Integer plantaPreferida
+        +validarAreaMinima() Boolean
+        +editar()
+        +eliminar()
+    }
+
+    class PreferenciasVivienda {
+        +UUID id
+        +String estiloArquitectonico
+        +Integer numeroPlantas
+        +Integer estacionamientos
+        +Boolean previsionAmpliacion
+        +String distribucionPorNiveles
+        +validar() Boolean
+        +registrarDistribucionNiveles()
+    }
+
+    class VersionLayout {
+        +UUID id
+        +Integer numeroVersion
+        +EstadoVersion estado
+        +Date fechaGeneracion
+        +Float areaTotalObtenidaM2
+        +generar()
+        +regenerar() VersionLayout
+        +detectarColisiones() List
+        +calcularBalanceAreas() Float
+        +aceptar()
+        +restaurar()
+    }
+
+    class EspacioColocado {
+        +UUID id
+        +Float posX
+        +Float posY
+        +Float anchoMts
+        +Float altoMts
+        +Integer planta
+        +Float areaObtenidaM2
+        +mover(nuevaX, nuevaY)
+        +redimensionar(ancho, alto)
+        +verificarLimites() Boolean
+    }
+
+    class RevisionTecnica {
+        +UUID id
+        +DecisionRevision decision
+        +String comentariosTecnicos
+        +Date fechaRevision
+        +aprobar()
+        +requerirAjustes(comentarios)
+        +notificarPropietario()
+    }
+
+    class Exportacion {
+        +UUID id
+        +FormatoExportacion formato
+        +String nombreArchivo
+        +Date fechaExportacion
+        +String rutaArchivo
+        +exportarPDF() File
+        +exportarDXF() File
+    }
+
+    Usuario "1" --> "0..*" Proyecto : posee
+    Usuario "1" --> "0..*" RevisionTecnica : realiza
+    Proyecto "1" *-- "1" Terreno : registra
+    Proyecto "1" *-- "1..*" EspacioRequerido : define
+    Proyecto "1" *-- "1" PreferenciasVivienda : captura
+    Proyecto "1" --> "0..*" VersionLayout : genera
+    VersionLayout "1" *-- "1..*" EspacioColocado : contiene
+    EspacioColocado "1..*" --> "1" EspacioRequerido : satisface
+    VersionLayout "1" --> "0..1" RevisionTecnica : recibe
+    VersionLayout "1" --> "0..*" Exportacion : se exporta como
