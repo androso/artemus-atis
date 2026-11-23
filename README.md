@@ -14,15 +14,15 @@
 
 ## 2. Equipo de Trabajo y Distribución de Responsabilidades
 
-El equipo del proyecto integrador está compuesto por los siguientes integrantes, con distribución de roles ágiles y autoría de 2 historias de usuario por integrante:
+El equipo del proyecto integrador está compuesto por los siguientes integrantes, con los roles Scrum y responsabilidades definidos en el Laboratorio 2:
 
 | Integrante | Rol Scrum | Responsabilidad Principal | Historias a Cargo |
 |---|---|---|---|
-| **Steisy Benítez** | Product Owner (PO) | Definición de visión de producto, requerimientos de cliente y priorización de negocio | US-01, US-02 |
-| **Anderson Fuentes** | Scrum Master (SM) | Facilitación de ceremonias ágiles, eliminación de impedimentos y gestión de tableros | US-03, US-04 |
-| **Aníbal Campos** | Developer | Arquitectura de software, motor de generación 2D e interactividad en canvas | US-05, US-06 |
-| **Elmer Garcia** | Developer | Flujos de formalización, exportación documental PDF e interoperabilidad DXF | US-07, US-08 |
-| **Isaac Medrano** | Developer | Consola de auditoría técnica del arquitecto y consolidación de requisitos | US-09, US-10 |
+| **Steisy Benítez** | Product Owner (PO) | Definición de visión de producto, requerimientos de cliente y priorización de negocio | US-02 *(US-01: Equipo base)* |
+| **Aníbal Campos** | Scrum Master (SM) | Facilitación de ceremonias ágiles, eliminación de impedimentos y gestión de tableros | Facilitación y seguimiento Scrum |
+| **Anderson Fuentes** | Development Team (Dev) | Captura de espacios/preferencias, motor de generación 2D e interactividad en canvas | US-03, US-04, US-05, US-06 |
+| **Elmer Garcia** | Development Team (Dev) | Flujos de formalización, exportación documental PDF e interoperabilidad DXF | US-07, US-08 |
+| **Isaac Medrano** | Development Team (Dev) | Consola de auditoría técnica del arquitecto y consolidación de requisitos | US-09, US-10 |
 
 > *Nota de evaluación:* Conforme a las directrices del Laboratorio 2, las historias **US-01 a US-08** representan el conjunto base obligatorio de 8 historias de usuario para un equipo de 4 integrantes. Se incorporan **US-09 y US-10** para cubrir la totalidad de los 5 integrantes del equipo ATIS.
 
@@ -56,11 +56,11 @@ Para el Sprint 0 se seleccionaron **6 historias de usuario fundamentales** que t
 
 | ID | Historia de Usuario | Responsable | Prioridad | Story Points | Justificación para Sprint 0 |
 |---|---|---|:---:|:---:|---|
-| **US-01** | Registro e inicio de sesión | Steisy Benítez | Alta | 5 | Base de autenticación, seguridad y control de acceso basado en roles (RBAC). |
+| **US-01** | Registro e inicio de sesión | Equipo (base) | Alta | 5 | Base de autenticación, seguridad y control de acceso basado en roles (RBAC). |
 | **US-02** | Registrar terreno del proyecto | Steisy Benítez | Alta | 5 | Modelo dimensional y restricciones geométricas indispensables para todo el sistema. |
 | **US-03** | Definir espacios y habitaciones | Anderson Fuentes | Alta | 8 | Catálogo de recintos y reglas de validación de área construible versus área de terreno. |
 | **US-04** | Capturar preferencias de vivienda | Anderson Fuentes | Alta | 3 | Parámetros de estilo, plantas y estacionamiento que alimentan el algoritmo de layout. |
-| **US-05** | Generar propuesta conceptual 2D | Aníbal Campos | Alta | 8 | Motor de generación conceptual 2D sin solapes y versionado inicial (v1) a partir de terreno, espacios y preferencias. |
+| **US-05** | Generar propuesta conceptual 2D | Anderson Fuentes | Alta | 8 | Motor de generación conceptual 2D sin solapes y versionado inicial (v1) a partir de terreno, espacios y preferencias. |
 | **US-10** | Resumen de requisitos del proyecto | Isaac Medrano | Media | 3 | Vista consolidada para validar la integridad de los datos antes de pasar a la generación 2D. |
 
 *Total Sprint 0:* **32 Story Points**  
@@ -89,12 +89,12 @@ A continuación se detallan las 10 historias de usuario creadas, vinculadas a lo
 
 | ID | Título | Actor | Prioridad | SP | Responsable | Estado Inicial |
 |:---:|---|---|:---:|:---:|---|:---:|
-| **US-01** | Registro e inicio de sesión | Propietario / Arquitecto | Alta | 5 | Steisy Benítez | Backlog (Sprint 0) |
+| **US-01** | Registro e inicio de sesión | Propietario / Arquitecto | Alta | 5 | Equipo (base) | Backlog (Sprint 0) |
 | **US-02** | Registrar terreno del proyecto | Propietario | Alta | 5 | Steisy Benítez | Backlog (Sprint 0) |
 | **US-03** | Definir espacios y habitaciones | Propietario | Alta | 8 | Anderson Fuentes | Backlog (Sprint 0) |
 | **US-04** | Capturar preferencias de vivienda | Propietario | Alta | 3 | Anderson Fuentes | Backlog (Sprint 0) |
-| **US-05** | Generar propuesta conceptual 2D | Propietario | Alta | 8 | Aníbal Campos | Backlog (Sprint 0) |
-| **US-06** | Editar y regenerar el layout | Propietario | Media | 8 | Aníbal Campos | Backlog |
+| **US-05** | Generar propuesta conceptual 2D | Propietario | Alta | 8 | Anderson Fuentes | Backlog (Sprint 0) |
+| **US-06** | Editar y regenerar el layout | Propietario | Media | 8 | Anderson Fuentes | Backlog |
 | **US-07** | Aceptar propuesta conceptual | Propietario | Alta | 3 | Elmer Garcia | Backlog |
 | **US-08** | Exportar a PDF y DXF | Propietario / Arquitecto | Alta | 8 | Elmer Garcia | Backlog |
 | **US-09** | Revisión por arquitecto | Arquitecto | Media | 5 | Isaac Medrano | Backlog |
@@ -109,7 +109,7 @@ A continuación se detallan las 10 historias de usuario creadas, vinculadas a lo
 - **Actor:** Propietario o Arquitecto
 - **Necesidad:** Registrarse e iniciar sesión con correo electrónico y contraseña.
 - **Beneficio:** Acceder a mis proyectos y funcionalidades según mi rol en el sistema.
-- **Prioridad:** Alta | **Estimación:** 5 SP | **Responsable:** Steisy Benítez (PO)
+- **Prioridad:** Alta | **Estimación:** 5 SP | **Responsable:** Equipo (base)
 - **Criterios de Aceptación:**
   1. *Validación de credenciales:* Si las credenciales son incorrectas, el sistema muestra un mensaje de error claro ("Credenciales inválidas") y deniega el acceso sin exponer detalles del error en el servidor.
   2. *Control de acceso por rol:* Tras autenticarse correctamente, el sistema redirige al usuario al panel de control correspondiente a su rol (vista de proyectos residenciales para propietarios o consola de revisión técnica para arquitectos).
@@ -133,7 +133,7 @@ A continuación se detallan las 10 historias de usuario creadas, vinculadas a lo
 - **Actor:** Propietario
 - **Necesidad:** Indicar los espacios requeridos indicando tipo, cantidad y área deseada.
 - **Beneficio:** Comunicar mis necesidades funcionales y de distribución del hogar.
-- **Prioridad:** Alta | **Estimación:** 8 SP | **Responsable:** Anderson Fuentes (SM)
+- **Prioridad:** Alta | **Estimación:** 8 SP | **Responsable:** Anderson Fuentes (Dev)
 - **Criterios de Aceptación:**
   1. *Catálogo de espacios zonificados:* El usuario puede seleccionar habitaciones de una lista clasificada en zonas (social: sala/comedor; privada: dormitorios; servicio: cocina/baños) o crear un espacio personalizado con nombre válido.
   2. *Operaciones CRUD en borrador:* El usuario puede agregar, editar dimensiones/cantidades y eliminar espacios antes de generar la distribución 2D.
@@ -145,7 +145,7 @@ A continuación se detallan las 10 historias de usuario creadas, vinculadas a lo
 - **Actor:** Propietario
 - **Necesidad:** Registrar estilo arquitectónico, número de plantas, plazas de estacionamiento y previsión de ampliación.
 - **Beneficio:** Orientar la generación del layout según mis expectativas de vida y crecimiento.
-- **Prioridad:** Alta | **Estimación:** 3 SP | **Responsable:** Anderson Fuentes (SM)
+- **Prioridad:** Alta | **Estimación:** 3 SP | **Responsable:** Anderson Fuentes (Dev)
 - **Criterios de Aceptación:**
   1. *Campos requeridos y rangos válidos:* El formulario exige seleccionar el número de plantas (mínimo 1, máximo 3) y la cantidad de plazas de estacionamiento (mínimo 0) antes de habilitar la generación del diseño.
   2. *Selección de estilo y ampliación futura:* El usuario selecciona el estilo arquitectónico deseado y marca si requiere dejar previstas áreas o núcleos estructurales para futuras ampliaciones.
@@ -157,7 +157,7 @@ A continuación se detallan las 10 historias de usuario creadas, vinculadas a lo
 - **Actor:** Propietario
 - **Necesidad:** Generar una distribución conceptual 2D a partir del terreno, los espacios y las preferencias definidas.
 - **Beneficio:** Visualizar una alternativa arquitectónica funcional y clara de mi vivienda.
-- **Prioridad:** Alta | **Estimación:** 8 SP | **Responsable:** Aníbal Campos (Dev)
+- **Prioridad:** Alta | **Estimación:** 8 SP | **Responsable:** Anderson Fuentes (Dev)
 - **Criterios de Aceptación:**
   1. *Validación previa de requisitos:* El sistema verifica que existan datos válidos de terreno, al menos un área social, un dormitorio y un baño antes de iniciar el cálculo; si falta información, bloquea la acción y señala los pendientes.
   2. *Disposición poligonal sin solapes:* El motor coloca los recintos dentro de los límites del terreno sin superposición física entre habitaciones, respetando retiros de linderos e insertando circulaciones de conexión.
@@ -169,7 +169,7 @@ A continuación se detallan las 10 historias de usuario creadas, vinculadas a lo
 - **Actor:** Propietario
 - **Necesidad:** Ajustar manualmente la posición o dimensiones de las habitaciones o regenerar una propuesta alternativa.
 - **Beneficio:** Acercar el diseño a mis necesidades particulares antes de aceptarlo formalmente.
-- **Prioridad:** Media | **Estimación:** 8 SP | **Responsable:** Aníbal Campos (Dev)
+- **Prioridad:** Media | **Estimación:** 8 SP | **Responsable:** Anderson Fuentes (Dev)
 - **Criterios de Aceptación:**
   1. *Edición interactiva con detección de colisiones:* El usuario puede arrastrar y reacomodar habitaciones en el canvas; si un recinto invade otro o excede el límite del terreno, el sistema alerta visualmente en color rojo y bloquea el guardado.
   2. *Historial inmutable de versiones:* Cada acción de regeneración o guardado de edición crea una nueva versión secuencial (v1.1, v1.2, v2.0) sin sobreescribir ni eliminar las versiones anteriores.
