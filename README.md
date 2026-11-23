@@ -1,8 +1,8 @@
 # Artemus App — Sistema de Distribución de Vivienda 2D
 
 > **Proyecto Integrador ATIS — Universidad de Oriente (UNIVO)**  
-> **Laboratorio 2 — Planificación Inicial, Gestión de Backlog y Sprint 0**  
-> **Tablero de GitHub Projects:** [Artemus App — Sprint 0](https://github.com/users/androso/projects/9)
+> **Ciclo 02/2026 — Planificación Ágil (Sprint 0), Modelado UML y Arquitectura en Capas**  
+> **Tablero de GitHub Projects:** [Artemus App — ATIS Capstone](https://github.com/users/androso/projects/9)
 
 ---
 
@@ -30,7 +30,7 @@ El equipo del proyecto integrador está compuesto por los siguientes integrantes
 
 ## 3. Configuración del Tablero en GitHub Projects
 
-El tablero oficial del proyecto está configurado en **GitHub Projects (v2)** bajo el nombre **Artemus App — Sprint 0**:
+El tablero oficial del proyecto está configurado en **GitHub Projects (v2)** bajo el nombre **Artemus App — ATIS Capstone**:
 
 - **URL del Tablero:** [https://github.com/users/androso/projects/9](https://github.com/users/androso/projects/9)
 - **Columnas de Flujo de Trabajo:**
@@ -40,7 +40,8 @@ El tablero oficial del proyecto está configurado en **GitHub Projects (v2)** ba
   4. `Hecho` (Elementos que cumplen en su totalidad la *Definition of Done*).
 - **Campos Personalizados Configurados:**
   - `Prioridad`: Tipo selección única (`Alta`, `Media`, `Baja`).
-  - `Story Points`: Tipo numérico (Escala Fibonacci acordada en Planning Poker: 1, 2, 3, 5, 8, 13).
+  - `Story Points`: Tipo numérico (Escala Fibonacci acordada en Planning Poker: 1, 2, 3, 5, 8).
+  - `Sprint`: Tipo selección única (`Sprint 0`, `Backlog`, `Entregables ATIS`).
   - `Status`: Tipo selección única (`Backlog`, `En progreso`, `En revisión`, `Hecho`).
 
 ---
@@ -51,7 +52,7 @@ El tablero oficial del proyecto está configurado en **GitHub Projects (v2)** ba
 > *"Establecer la infraestructura base, arquitectura del sistema, entorno de desarrollo y la implementación del núcleo de captura de requisitos residenciales (autenticación segura, dimensiones del terreno, programa de espacios y preferencias arquitectónicas), dejando el backlog priorizado, estimado y validado para la generación del layout 2D."*
 
 ### 4.2. Elementos Seleccionados para el Sprint 0
-Para el Sprint 0 se seleccionaron **5 historias de usuario fundamentales** que totalizan **24 Story Points**:
+Para el Sprint 0 se seleccionaron **6 historias de usuario fundamentales** que totalizan **32 Story Points** (además de la tarea base de arquitectura `ARCH-01` en [#15](https://github.com/androso/artemus-atis/issues/15)):
 
 | ID | Historia de Usuario | Responsable | Prioridad | Story Points | Justificación para Sprint 0 |
 |---|---|---|:---:|:---:|---|
@@ -59,10 +60,11 @@ Para el Sprint 0 se seleccionaron **5 historias de usuario fundamentales** que t
 | **US-02** | Registrar terreno del proyecto | Steisy Benítez | Alta | 5 | Modelo dimensional y restricciones geométricas indispensables para todo el sistema. |
 | **US-03** | Definir espacios y habitaciones | Anderson Fuentes | Alta | 8 | Catálogo de recintos y reglas de validación de área construible versus área de terreno. |
 | **US-04** | Capturar preferencias de vivienda | Anderson Fuentes | Alta | 3 | Parámetros de estilo, plantas y estacionamiento que alimentan el algoritmo de layout. |
+| **US-05** | Generar propuesta conceptual 2D | Aníbal Campos | Alta | 8 | Motor de generación conceptual 2D sin solapes y versionado inicial (v1) a partir de terreno, espacios y preferencias. |
 | **US-10** | Resumen de requisitos del proyecto | Isaac Medrano | Media | 3 | Vista consolidada para validar la integridad de los datos antes de pasar a la generación 2D. |
 
-*Total Sprint 0:* **24 Story Points**  
-*Total Product Backlog:* **58 Story Points** (10 historias) / **50 Story Points** (8 historias base).
+*Total Sprint 0:* **32 Story Points**  
+*Total Product Backlog:* **56 Story Points** (10 historias) / **48 Story Points** (8 historias base).
 
 ---
 
@@ -91,7 +93,7 @@ A continuación se detallan las 10 historias de usuario creadas, vinculadas a lo
 | **US-02** | Registrar terreno del proyecto | Propietario | Alta | 5 | Steisy Benítez | Backlog (Sprint 0) |
 | **US-03** | Definir espacios y habitaciones | Propietario | Alta | 8 | Anderson Fuentes | Backlog (Sprint 0) |
 | **US-04** | Capturar preferencias de vivienda | Propietario | Alta | 3 | Anderson Fuentes | Backlog (Sprint 0) |
-| **US-05** | Generar propuesta conceptual 2D | Propietario | Alta | 13 | Aníbal Campos | Backlog |
+| **US-05** | Generar propuesta conceptual 2D | Propietario | Alta | 8 | Aníbal Campos | Backlog (Sprint 0) |
 | **US-06** | Editar y regenerar el layout | Propietario | Media | 8 | Aníbal Campos | Backlog |
 | **US-07** | Aceptar propuesta conceptual | Propietario | Alta | 3 | Elmer Garcia | Backlog |
 | **US-08** | Exportar a PDF y DXF | Propietario / Arquitecto | Alta | 8 | Elmer Garcia | Backlog |
@@ -155,7 +157,7 @@ A continuación se detallan las 10 historias de usuario creadas, vinculadas a lo
 - **Actor:** Propietario
 - **Necesidad:** Generar una distribución conceptual 2D a partir del terreno, los espacios y las preferencias definidas.
 - **Beneficio:** Visualizar una alternativa arquitectónica funcional y clara de mi vivienda.
-- **Prioridad:** Alta | **Estimación:** 13 SP | **Responsable:** Aníbal Campos (Dev)
+- **Prioridad:** Alta | **Estimación:** 8 SP | **Responsable:** Aníbal Campos (Dev)
 - **Criterios de Aceptación:**
   1. *Validación previa de requisitos:* El sistema verifica que existan datos válidos de terreno, al menos un área social, un dormitorio y un baño antes de iniciar el cálculo; si falta información, bloquea la acción y señala los pendientes.
   2. *Disposición poligonal sin solapes:* El motor coloca los recintos dentro de los límites del terreno sin superposición física entre habitaciones, respetando retiros de linderos e insertando circulaciones de conexión.
@@ -223,7 +225,20 @@ A continuación se detallan las 10 historias de usuario creadas, vinculadas a lo
 
 ## 7. Proceso de Estimación (Planning Poker)
 
-El equipo aplicó la técnica de **Planning Poker** utilizando la secuencia de Fibonacci modificada (1, 2, 3, 5, 8, 13). Durante la sesión:
+El equipo aplicó la técnica de **Planning Poker** utilizando la secuencia de Fibonacci modificada (1, 2, 3, 5, 8). Durante la sesión:
 1. Se identificaron y eliminaron ambigüedades en la descripción del valor y los criterios de aceptación.
-2. Se resolvió la división de funcionalidades grandes, manteniendo la generación del plano (US-05) como la tarea algorítmica de mayor peso (13 SP).
-3. Se llegó a un consenso unánime sobre los valores finales registrados en las tarjetas y campos de GitHub Projects.
+2. Se resolvió la división de funcionalidades grandes, manteniendo la generación del plano (US-05) como una de las tareas de mayor complejidad algorítmica (8 SP).
+3. Se llegó a un consenso unánime sobre los valores finales registrados en las tarjetas y campos de GitHub Projects (56 SP totales).
+
+---
+
+## 8. Documentación y Arquitectura (`docs/`)
+
+Los entregables del Proyecto Integrador y el diseño técnico se encuentran organizados en `docs/` y reflejados en GitHub Projects ([#11](https://github.com/androso/artemus-atis/issues/11)–[#15](https://github.com/androso/artemus-atis/issues/15)):
+
+- **Contexto consolidado:** `docs/ATIS_Artemus_Capstone/01_Context/artemus_capstone_full_context.md` y `docs/ATIS_Artemus_Capstone/01_Context/capstone.md`
+- **Lab 1 — Concepción RUP:** `docs/ATIS_Artemus_Capstone/02_Deliverables/Artemus App tecnicas(1).docx` ([#11](https://github.com/androso/artemus-atis/issues/11))
+- **Lab 2 — Plan Ágil / Sprint 0:** `README.md` y tablero de GitHub Projects ([#12](https://github.com/androso/artemus-atis/issues/12))
+- **Práctica 03 / Lab 3 — Modelado UML:** `docs/uml/diagrama_clases_artemus.mmd` y `docs/ATIS_Artemus_Capstone/02_Deliverables/Laboratorio3_ArtemusApp_Equipo_Corregido.pdf` ([#13](https://github.com/androso/artemus-atis/issues/13))
+- **Práctica 06 — Arquitectura en Capas:** `docs/ATIS_Artemus_Capstone/02_Deliverables/Practica06_Arquitectura_Capas_Equipo.pdf` ([#14](https://github.com/androso/artemus-atis/issues/14))
+- **Estructura objetivo en 3 capas (`ARCH-01`, [#15](https://github.com/androso/artemus-atis/issues/15)):** `src/views/`, `src/controllers/` y `src/models/` (pendiente de implementación).
