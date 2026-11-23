@@ -41,7 +41,7 @@ El tablero oficial del proyecto está configurado en **GitHub Projects (v2)** ba
 - **Campos Personalizados Configurados:**
   - `Prioridad`: Tipo selección única (`Alta`, `Media`, `Baja`).
   - `Story Points`: Tipo numérico (Escala Fibonacci acordada en Planning Poker: 1, 2, 3, 5, 8).
-  - `Sprint`: Tipo selección única (`Sprint 0`, `Backlog`, `Entregables ATIS`).
+  - `Sprint`: Tipo selección única (`Sprint 0`, `Backlog`).
   - `Status`: Tipo selección única (`Backlog`, `En progreso`, `En revisión`, `Hecho`).
 
 ---
@@ -234,11 +234,11 @@ El equipo aplicó la técnica de **Planning Poker** utilizando la secuencia de F
 
 ## 8. Documentación y Arquitectura (`docs/`)
 
-Los entregables del Proyecto Integrador y el diseño técnico se encuentran organizados en `docs/` y reflejados en GitHub Projects ([#11](https://github.com/androso/artemus-atis/issues/11)–[#15](https://github.com/androso/artemus-atis/issues/15)):
+Los entregables del Proyecto Integrador y el diseño técnico se encuentran organizados en `docs/`:
 
 - **Contexto consolidado:** `docs/ATIS_Artemus_Capstone/01_Context/artemus_capstone_full_context.md` y `docs/ATIS_Artemus_Capstone/01_Context/capstone.md`
-- **Lab 1 — Concepción RUP:** `docs/ATIS_Artemus_Capstone/02_Deliverables/Artemus App tecnicas(1).docx` ([#11](https://github.com/androso/artemus-atis/issues/11))
-- **Lab 2 — Plan Ágil / Sprint 0:** `README.md` y tablero de GitHub Projects ([#12](https://github.com/androso/artemus-atis/issues/12))
-- **Práctica 03 / Lab 3 — Modelado UML:** `docs/uml/diagrama_clases_artemus.mmd` y `docs/ATIS_Artemus_Capstone/02_Deliverables/Laboratorio3_ArtemusApp_Equipo_Corregido.pdf` ([#13](https://github.com/androso/artemus-atis/issues/13))
-- **Práctica 06 — Arquitectura en Capas:** `docs/ATIS_Artemus_Capstone/02_Deliverables/Practica06_Arquitectura_Capas_Equipo.pdf` ([#14](https://github.com/androso/artemus-atis/issues/14))
+- **Lab 1 — Concepción RUP:** `docs/ATIS_Artemus_Capstone/02_Deliverables/Artemus App tecnicas(1).docx`
+- **Lab 2 — Plan Ágil / Sprint 0:** `README.md` y tablero de GitHub Projects
+- **Práctica 03 / Lab 3 — Modelado UML:** `docs/uml/diagrama_clases_artemus.mmd` y `docs/ATIS_Artemus_Capstone/02_Deliverables/Laboratorio3_ArtemusApp_Equipo_Corregido.pdf`
+- **Práctica 06 — Arquitectura en Capas:** `docs/ATIS_Artemus_Capstone/02_Deliverables/Practica06_Arquitectura_Capas_Equipo.pdf`
 - **Estructura objetivo en 3 capas (`ARCH-01`, [#15](https://github.com/androso/artemus-atis/issues/15)):** `src/views/`, `src/controllers/` y `src/models/` (pendiente de implementación).
